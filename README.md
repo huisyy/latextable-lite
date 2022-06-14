@@ -7,6 +7,8 @@ Latextable-lite is a Python package that can create simple Latex tables. It is h
 - The output is correctly indented for directly copying into Latex.
 - Supports multiple header rows and multi-column header rows.
 
+![advanced example](https://github.com/huisyy/latextable-lite/blob/main/images/advanced_example.png?raw=true)
+
 ## Installation
 ```
 pip install latextable-lite
@@ -68,6 +70,9 @@ Output:
         \end{tabularx}
 \end{table}
 ```
+
+![basic example](https://github.com/huisyy/latextable-lite/blob/main/images/basic_example.png?raw=true)
+
 
 
 
