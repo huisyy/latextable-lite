@@ -1,4 +1,4 @@
-import latextable_lite
+from latextable_lite import utils
 
 """
 Example showcasing all optional arguments:
@@ -19,14 +19,14 @@ if __name__ == "__main__":
             ["RFE+", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "0.0"],
             ["", "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}",  "^{\pm 0.5}"]]
     multi_column_size = [1,2,2,2,2,2]
-    caption = "advanced latexlite example"
+    caption = "advanced latextable-lite example"
     caption_above = True,
     c_line = True
     
-    print(latextable_lite.draw_latex(rows, 
-                                    num_headers=num_headers,
-                                    multi_column_size=multi_column_size,
-                                    caption=caption,
-                                    caption_above=caption_above,
-                                    c_line=c_line))
+    print(utils.draw_latex(rows, 
+                num_headers=num_headers,
+                multi_column_size=multi_column_size,
+                caption=caption,
+                caption_above=caption_above,
+                c_line=c_line))
 

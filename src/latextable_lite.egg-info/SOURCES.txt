@@ -3,7 +3,7 @@ README.md
 pyproject.toml
 setup.cfg
 src/latextable_lite/__init__.py
-src/latextable_lite/latextable_lite.py
+src/latextable_lite/utils.py
 src/latextable_lite.egg-info/PKG-INFO
 src/latextable_lite.egg-info/SOURCES.txt
 src/latextable_lite.egg-info/dependency_links.txt

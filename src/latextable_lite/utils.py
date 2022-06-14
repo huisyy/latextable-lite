@@ -20,6 +20,8 @@ def draw_latex(rows,
     
     :return: The formatted Latex table returned as a single string.
     """
+    if not multi_column_size:
+        multi_column_size = [1] * len(rows[0])
     out = ""
     out += _draw_latex_preamble(num_cols=len(rows[-1]), 
                                         caption=caption if caption_above else None)
@@ -68,7 +70,10 @@ def _draw_latex_header(headers, multi_column_size):
     else:
         main_header_latex = "\\multicolumn{%s}{c}{%s}" % (multi_column_size[0],main_header[0])
     for i, entry in enumerate(main_header[1:]):
-        main_header_latex += " & \\multicolumn{%s}{c}{%s}" % (multi_column_size[i+1], entry)
+        if multi_column_size[i+1] == 1:
+            main_header_latex += " & %s" % (entry)
+        else:
+            main_header_latex += " & \\multicolumn{%s}{c}{%s}" % (multi_column_size[i+1], entry)
     main_header_latex += "\\\\"+ "\n"
     out += _indent_text(main_header_latex, 3)
 
