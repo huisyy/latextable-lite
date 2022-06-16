@@ -15,7 +15,7 @@ pip install latextable-lite
 ```
 ## Usage
 
-The single function `latextable_lite.draw_latex` returns a formatted Latex string based on the provided table.
+The single function `latextable_lite.utils.draw_latex` returns a formatted Latex string based on the provided table.
 Aside from `rows`, all arguments are optional.
 ```
 def draw_latex(rows, 

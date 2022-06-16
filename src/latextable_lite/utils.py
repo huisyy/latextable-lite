@@ -49,7 +49,10 @@ def _draw_latex_preamble(num_cols, caption):
     out += _indent_text("\\renewcommand{\\arraystretch}{1.5}", 1)
     out += "\n"
 
-    column_str = "l" + "X" * num_cols
+    if num_cols == 2:
+        column_str = "X" * 2
+    else:
+        column_str = "l" + "X" * num_cols
     tabular_str = "\\begin{tabularx}{\\textwidth}{" + column_str + "}\n"
     out += _indent_text(tabular_str, 1)
 

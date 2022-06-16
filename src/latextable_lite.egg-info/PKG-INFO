@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: latextable-lite
-Version: 0.0.3
+Version: 0.0.4
 Summary: Create simple Latex tables
 Home-page: https://github.com/huisyy/latextable-lite
 Author: Megan Hu
@@ -21,13 +21,15 @@ Latextable-lite is a Python package that can create simple Latex tables. It is h
 - The output is correctly indented for directly copying into Latex.
 - Supports multiple header rows and multi-column header rows.
 
+![advanced example](https://github.com/huisyy/latextable-lite/blob/main/images/advanced_example.png?raw=true)
+
 ## Installation
 ```
 pip install latextable-lite
 ```
 ## Usage
 
-The single function `latextable_lite.draw_latex` returns a formatted Latex string based on the provided table.
+The single function `latextable_lite.utils.draw_latex` returns a formatted Latex string based on the provided table.
 Aside from `rows`, all arguments are optional.
 ```
 def draw_latex(rows, 
@@ -55,13 +57,14 @@ A basic example is given below. For more see the examples directory.
 Code:
 
 ```
-import latextable_lite
+from latextable_lite import utils
 
-rows = [["Name", "Age", "Nickname"],
-        ["Mr\nXavier\nHuon", 32, "Xav'"],
-        ["Mr\nBaptiste\nClement", 1, "Baby"],
-        ["Mme\nLouise\nBourgeau", 28, "Lou\n \nLoue"]]
-print(latextable_lite.draw_latex(rows))
+if __name__ == "__main__":
+    rows = [["Name", "Age", "Sex", "Nickname", "Occupation", "Marital Status"],
+            ["Xavier", "32", "M", "Xav'", "Doctor", "Married"],
+            ["Baptiste", "1", "F", "Baby", "Baby", "Single"],
+            ["Louise", "28", "M", "Lou/Loue", "Engineer", "Single"]]
+    print(utils.draw_latex(rows))
 ```
 
 Output:
@@ -81,6 +84,9 @@ Output:
         \end{tabularx}
 \end{table}
 ```
+
+![basic example](https://github.com/huisyy/latextable-lite/blob/main/images/basic_example.png?raw=true)
+
 
 
 
